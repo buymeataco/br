@@ -1,11 +1,31 @@
 @import url(//db.onlinewebfonts.com/c/14bcfcf98e9d42ff3c30c88d332fd7d4?family=Avenir+Next+Demi+Bold);
+.col-xs-2,
+.col-xs-8 {
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: "Avenir Next Demi Bold";
   src: url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.eot");
   src: url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.woff") format("woff"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.svg#Avenir Next Demi Bold") format("svg");
 }
-p {
+.nav-bar {
+  background-color: #43E895;
+  height: 60px;
+  border-bottom: 1px solid #a7a7aa;
+}
+.nav-bar p {
   font-family: "Avenir Next Demi Bold";
+  text-align: center;
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 25px;
+}
+.nav-bar img {
+  position: relative;
+  float: right;
+  padding: 20px 10px 0 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
