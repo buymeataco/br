@@ -14,6 +14,7 @@ module.exports = function(grunt) {
       }//dev
     },//compass    
     watch: {
+      options: {livereload: true},
       sass: {
         files: ['src/scss/*.scss'],
         tasks: ['compass:dev', 'scsslint']
@@ -21,7 +22,7 @@ module.exports = function(grunt) {
     },//watch
     scsslint: {
       allFiles: [
-        'src/scss/*.scss'
+        'src/scss/*.scss' 
       ],
       options: {
         bundleExec: false,

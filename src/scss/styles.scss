@@ -1,3 +1,14 @@
+.container,
+.row,
+.col-xs-2,
+.col-xs-3,
+.col-xs-6,
+.col-xs-8,
+.col-xs-12 {
+  margin: 0;
+  padding: 0;
+}
+
 .nav-bar {
   background-color: #43E895;
   height: 60px;
@@ -10,13 +21,60 @@
       margin-top: 25px;
     }
     img {
-      position: relative;
       float: right;
-      padding: 20px 10px 0 0;
+      margin: 10px 10px 0 0;
     }
+}//nav-bar
 
-}//navbar
+.food-hero {
+  position: relative;
+  margin: auto;
+  max-width: 768px;
+  height: 180px;
+  background: url('http://sandbox.bottlerocketapps.com/BR_iOS_CodingExam_2015_Server/Images/hopdoddy.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-@media screen and (max-width: 320px) {
+.food-hero:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 43%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 43%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 43%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
 
-}//320
+.food-hero__content {
+  position: relative;
+  z-index: 10;
+  top: 135px;
+  left: 16px;
+
+  h1 {
+    font-family: "Avenir Next Demi Bold";    
+    color: #ffffff;
+    margin: 0;
+    font-size: 16px;  
+  }
+  p {
+    font-family: "Avenir Next Demi Bold";
+    color: #ffffff;
+    font-size: 12px;
+  }
+}//food-hero__content
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 320px) {}

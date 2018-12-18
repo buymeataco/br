@@ -1,15 +1,20 @@
 @import url(//db.onlinewebfonts.com/c/14bcfcf98e9d42ff3c30c88d332fd7d4?family=Avenir+Next+Demi+Bold);
-.col-xs-2,
-.col-xs-8 {
-  margin: 0;
-  padding: 0;
-}
-
 @font-face {
   font-family: "Avenir Next Demi Bold";
   src: url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.eot");
   src: url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.woff") format("woff"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.svg#Avenir Next Demi Bold") format("svg");
 }
+.container,
+.row,
+.col-xs-2,
+.col-xs-3,
+.col-xs-6,
+.col-xs-8,
+.col-xs-12 {
+  margin: 0;
+  padding: 0;
+}
+
 .nav-bar {
   background-color: #43E895;
   height: 60px;
@@ -23,9 +28,54 @@
   margin-top: 25px;
 }
 .nav-bar img {
-  position: relative;
   float: right;
-  padding: 20px 10px 0 0;
+  margin: 10px 10px 0 0;
+}
+
+.food-hero {
+  position: relative;
+  margin: auto;
+  max-width: 768px;
+  height: 180px;
+  background: url("http://sandbox.bottlerocketapps.com/BR_iOS_CodingExam_2015_Server/Images/hopdoddy.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.food-hero:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -moz-linear-gradient(top, transparent 43%, black 100%);
+  /* FF3.6-15 */
+  background-image: -webkit-linear-gradient(top, transparent 43%, black 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 43%, #000000 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+}
+
+.food-hero__content {
+  position: relative;
+  z-index: 10;
+  top: 135px;
+  left: 16px;
+}
+.food-hero__content h1 {
+  font-family: "Avenir Next Demi Bold";
+  color: #ffffff;
+  margin: 0;
+  font-size: 16px;
+}
+.food-hero__content p {
+  font-family: "Avenir Next Demi Bold";
+  color: #ffffff;
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=styles.css.map */
