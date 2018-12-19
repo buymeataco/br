@@ -10,9 +10,17 @@
 .col-xs-3,
 .col-xs-6,
 .col-xs-8,
-.col-xs-12 {
+.col-xs-12,
+.col-sm-4,
+.col-sm-5,
+.col-sm-7,
+.col-sm-8 {
   margin: 0;
   padding: 0;
+}
+
+.container {
+  margin: 0 auto;
 }
 
 .nav-bar {
@@ -41,6 +49,11 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.food-hero .img {
+  max-width: 100%;
+  max-height: 100%;
+  background-size: fill;
 }
 
 .food-hero:after {
@@ -75,6 +88,31 @@
 .food-hero__content p {
   font-family: "Avenir Next Demi Bold";
   color: #ffffff;
+  font-size: 12px;
+}
+
+.map-footer {
+  background-color: #34B379;
+  height: 60px;
+  padding-top: 12px;
+  padding-left: 10px;
+}
+.map-footer h1 {
+  font-family: "Avenir Next Demi Bold";
+  color: #ffffff;
+  margin: 0;
+  font-size: 16px;
+}
+.map-footer p {
+  font-family: "Avenir Next Demi Bold";
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.address-block p {
+  margin-top: 15px;
+  font-family: "Avenir Next Demi Bold";
+  color: #000000;
   font-size: 12px;
 }
 
