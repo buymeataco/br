@@ -39,6 +39,11 @@
   float: right;
   margin: 10px 10px 0 0;
 }
+.nav-bar img.arrow {
+  float: left;
+  max-width: 20px;
+  padding: 20px 0 0 12px;
+}
 
 .food-hero {
   position: relative;
@@ -123,6 +128,14 @@
 .sticky-footer img {
   max-width: 20px;
   padding-top: 10px;
+}
+
+.map {
+  max-height: 180px;
+  overflow: hidden;
+}
+.map img {
+  max-width: initial;
 }
 
 /*# sourceMappingURL=styles.css.map */
