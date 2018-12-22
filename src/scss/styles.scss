@@ -22,7 +22,7 @@
   height: 60px;
   border-bottom: 1px solid rgb(167,167,170);
     p {
-      font-family: "Avenir Next Demi Bold";
+      font-family: $bodyCopyFont;
       text-align: center;
       color: #ffffff;
       font-size: 17px;
@@ -44,7 +44,7 @@
   margin: auto;
   max-width: 768px;
   height: 180px;
-  background: url('http://sandbox.bottlerocketapps.com/BR_iOS_CodingExam_2015_Server/Images/hopdoddy.png');
+  // background: url('http://sandbox.bottlerocketapps.com/BR_iOS_CodingExam_2015_Server/Images/hopdoddy.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -74,13 +74,13 @@
   top: 135px;
   left: 16px;
   h1 {
-    font-family: "Avenir Next Demi Bold";    
+    font-family: $bodyCopyFont;
     color: #ffffff;
     margin: 0;
     font-size: 16px;  
   }
   p {
-    font-family: "Avenir Next Demi Bold";
+    font-family: $bodyCopyFont;
     color: #ffffff;
     font-size: 12px;
   }
@@ -92,13 +92,13 @@
   padding-top: 12px;
   padding-left: 10px;
   h1 {
-    font-family: "Avenir Next Demi Bold";    
+    font-family: $bodyCopyFont;
     color: #ffffff;
     margin: 0;
     font-size: 16px;  
   }
   p {
-    font-family: "Avenir Next Demi Bold";
+    font-family: $bodyCopyFont;
     color: #ffffff;
     font-size: 12px;
   }
@@ -107,7 +107,7 @@
 .address-block {
     p {
     margin-top: 15px;
-    font-family: "Avenir Next Demi Bold";
+    font-family: $bodyCopyFont;
     color: #000000;
     font-size: 12px;
   }
@@ -126,11 +126,6 @@
  max-height: 180px;
  overflow: hidden;
   img {
-    max-width: initial;    
+    max-width: initial;
   }
 }
-
-
-
-
-@media screen and (max-width: 320px) {}

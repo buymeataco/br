@@ -7,6 +7,8 @@ import { ListComponent } from './components/list/list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { DataService } from './services/data.service';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,14 @@ import { DetailComponent } from './components/detail/detail.component';
     ListComponent,
     NavbarComponent,
     FooterComponent,
-    DetailComponent
+    DetailComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

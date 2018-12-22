@@ -1,9 +1,9 @@
-<div class="row">
+<div class="row" *ngFor="let biz of fetchedBusinesses">
   <div class="col-xs-12 visible-xs">
-    <div class="food-hero">
+      <div class="food-hero" [style.background]="biz.preppedImageURL">
       <div class="food-hero__content">
-        <h1>Restaurant Name</h1>
-        <p>Category Type</p>
+        <h1>{{ biz.name }}</h1>
+        <p>{{ biz.category }}</p>
       </div>
     </div>
   </div>
@@ -13,8 +13,8 @@
   <div class="col-sm-5 hidden-xs">
     <div class="food-hero">
       <div class="food-hero__content">
-        <h1>Restaurant Name</h1>
-        <p>Category Type</p>
+        <h1 *ngFor="let biz of fetchedBusinesses">{{ biz.name }}</h1>
+        <p *ngFor="let biz of fetchedBusinesses">{{ biz.category }}</p>
       </div>
     </div>
   </div>
@@ -27,11 +27,11 @@
     <div class="row">
      <div class="col-xs-12">
         <div class="map-footer">
-          <h1>Restaurant Type</h1>
-          <p>Map Footer</p>
+          <h1 *ngFor="let biz of fetchedBusinesses">{{ biz.name }}</h1>
+          <p *ngFor="let biz of fetchedBusinesses">{{ biz.category }}</p>
         </div>
         <div class="address-block">
-          <p>Contact info from JSON feed.</p>
+          <p>JSON Content here.</p>
         </div>
       </div>
     </div><!-- row -->

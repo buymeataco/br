@@ -1,9 +1,4 @@
 @import url(//db.onlinewebfonts.com/c/14bcfcf98e9d42ff3c30c88d332fd7d4?family=Avenir+Next+Demi+Bold);
-@font-face {
-  font-family: "Avenir Next Demi Bold";
-  src: url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.eot");
-  src: url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.woff") format("woff"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.svg#Avenir Next Demi Bold") format("svg");
-}
 .container,
 .row,
 .col-xs-2,
@@ -29,7 +24,7 @@
   border-bottom: 1px solid #a7a7aa;
 }
 .nav-bar p {
-  font-family: "Avenir Next Demi Bold";
+  font-family: sans-serif;
   text-align: center;
   color: #ffffff;
   font-size: 17px;
@@ -50,7 +45,6 @@
   margin: auto;
   max-width: 768px;
   height: 180px;
-  background: url("http://sandbox.bottlerocketapps.com/BR_iOS_CodingExam_2015_Server/Images/hopdoddy.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -85,13 +79,13 @@
   left: 16px;
 }
 .food-hero__content h1 {
-  font-family: "Avenir Next Demi Bold";
+  font-family: sans-serif;
   color: #ffffff;
   margin: 0;
   font-size: 16px;
 }
 .food-hero__content p {
-  font-family: "Avenir Next Demi Bold";
+  font-family: sans-serif;
   color: #ffffff;
   font-size: 12px;
 }
@@ -103,20 +97,20 @@
   padding-left: 10px;
 }
 .map-footer h1 {
-  font-family: "Avenir Next Demi Bold";
+  font-family: sans-serif;
   color: #ffffff;
   margin: 0;
   font-size: 16px;
 }
 .map-footer p {
-  font-family: "Avenir Next Demi Bold";
+  font-family: sans-serif;
   color: #ffffff;
   font-size: 12px;
 }
 
 .address-block p {
   margin-top: 15px;
-  font-family: "Avenir Next Demi Bold";
+  font-family: sans-serif;
   color: #000000;
   font-size: 12px;
 }
