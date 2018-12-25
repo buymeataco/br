@@ -1,6 +1,6 @@
 <div class="row" *ngFor="let biz of fetchedBusinesses">
   <div class="col-xs-12 visible-xs">
-      <div class="food-hero" [style.background]="biz.preppedImageURL">
+      <div class="food-hero" [style.background-image]="biz.preppedImageURL">
       <div class="food-hero__content">
         <h1>{{ biz.name }}</h1>
         <p>{{ biz.category }}</p>
@@ -11,10 +11,10 @@
 
 <div class="row">
   <div class="col-sm-5 hidden-xs">
-    <div class="food-hero">
+    <div class="food-hero" *ngFor="let biz of fetchedBusinesses" [style.background-image]="biz.preppedImageURL">
       <div class="food-hero__content">
-        <h1 *ngFor="let biz of fetchedBusinesses">{{ biz.name }}</h1>
-        <p *ngFor="let biz of fetchedBusinesses">{{ biz.category }}</p>
+        <h1>{{ biz.name }}</h1>
+        <p>{{ biz.category }}</p>
       </div>
     </div>
   </div>
@@ -22,16 +22,22 @@
     <div class="row">
       <div class="col-xs-12">
        <img src="src/assets/img/map_placeholder.png" class="img-responsive" alt="map placeholder">
+       <!-- live map test -->
+       <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13392.08623701076!2d-96.8197987!3d32.9504402!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1545609280523" width="360" height="800" frameborder="0" style="border:0;width:100%;height:360px;" allowfullscreen></iframe> -->
       </div><!-- row -->
     </div>
     <div class="row">
      <div class="col-xs-12">
         <div class="map-footer">
-          <h1 *ngFor="let biz of fetchedBusinesses">{{ biz.name }}</h1>
-          <p *ngFor="let biz of fetchedBusinesses">{{ biz.category }}</p>
+          <h1>{{ biz.name }}</h1>
+          <p >{{ biz.category }}</p>
         </div>
         <div class="address-block">
-          <p>JSON Content here.</p>
+          <p>{{ biz.location.formattedAddress.streetNum }}</p>
+          <p>{{ biz.location.formattedAddress.cityStateZip }}</p>
+          <p>{{ biz.location.country }}</p>
+          <p>{{ biz.contact.formattedPhone }}</p>
+          <p>#{{ biz.contact.twitter }}</p>
         </div>
       </div>
     </div><!-- row -->

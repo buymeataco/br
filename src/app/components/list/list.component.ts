@@ -11,18 +11,22 @@ import { SanitizedURLarray } from '../../models/SanitizedURLarray';
 export class ListComponent implements OnInit {
   fetchedBusinesses: FetchedBusinesses[];
   sanitizedURLarray: SanitizedURLarray[];
+  fetchedLength: number;
 
-  constructor(private _dataService: DataService, private _sanitizer: DomSanitizer) { }
+  constructor(private _dataService: DataService, private _sanitizer: DomSanitizer) {}
 
   ngOnInit() {
-    this.fetchedBusinesses = this._dataService.getBusinesses();
-    this.sanitizedURLarray = this.getImageURLs();
-    this.reinsertSanitizedURLs(this.sanitizedURLarray);
+    this._dataService.getDataStream().subscribe(fetchedBusinesses => {
+      this.fetchedBusinesses = fetchedBusinesses['restaurants'];
+      this.fetchedLength = this.fetchedBusinesses.length;
+      this.sanitizedURLarray = this.getImageURLs(this.fetchedLength);
+      this.reinsertSanitizedURLs(this.sanitizedURLarray);
+    });
   }//ngOnInit
 
-  getImageURLs() {
+  getImageURLs(fetchedLength) {//"fetchedBusinesses['restaurants'].length" kept producing an error
     let url: any = [];
-    for (var i = 0; i < this.fetchedBusinesses.length; i++) {
+    for (var i = 0; i < fetchedLength; i++) {
       url.push(this._sanitizer.bypassSecurityTrustStyle(`url(${this.fetchedBusinesses[i].backgroundImageURL})`));
     }
     return url;
@@ -30,7 +34,7 @@ export class ListComponent implements OnInit {
 
   reinsertSanitizedURLs(sanitizedURLarray) {
     let url: any = [];
-    for (var i = 0; i < sanitizedURLarray.length; i++) {
+    for (var i = 0; i < this.fetchedLength; i++) {
       var obj = sanitizedURLarray[i];
       var values: any = Object.values(obj);
       url.push(values);
