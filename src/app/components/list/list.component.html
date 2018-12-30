@@ -1,6 +1,6 @@
-<div class="row" *ngFor="let biz of fetchedBusinesses">
+<div class="row" *ngFor="let biz of convertedFetched">
   <div class="col-xs-12 visible-xs">
-      <div class="food-hero" [style.background-image]="biz.preppedImageURL">
+      <div class="food-hero" (click)="clickedBiz($event)" [style.background-image]="biz.preppedImageURL">
       <div class="food-hero__content">
         <h1>{{ biz.name }}</h1>
         <p>{{ biz.category }}</p>
@@ -10,8 +10,8 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-5 hidden-xs">
-    <div class="food-hero" *ngFor="let biz of fetchedBusinesses" [style.background-image]="biz.preppedImageURL">
+  <div class="col-sm-5 hidden-xs pre-scrollable hideXscroll">
+    <div class="food-hero" (click)="clickedBiz($event)" *ngFor="let biz of convertedFetched" [style.background-image]="biz.preppedImageURL">
       <div class="food-hero__content">
         <h1>{{ biz.name }}</h1>
         <p>{{ biz.category }}</p>
@@ -21,25 +21,31 @@
   <div class="col-sm-7 hidden-xs">
     <div class="row">
       <div class="col-xs-12">
-       <img src="src/assets/img/map_placeholder.png" class="img-responsive" alt="map placeholder">
-       <!-- live map test -->
-       <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13392.08623701076!2d-96.8197987!3d32.9504402!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1545609280523" width="360" height="800" frameborder="0" style="border:0;width:100%;height:360px;" allowfullscreen></iframe> -->
-      </div><!-- row -->
-    </div>
+        <agm-map [zoom]=zoom [latitude]="lat" [longitude]="lng">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
     <div class="row">
      <div class="col-xs-12">
-        <div class="map-footer">
-          <h1>{{ biz.name }}</h1>
-          <p >{{ biz.category }}</p>
-        </div>
-        <div class="address-block">
-          <p>{{ biz.location.formattedAddress.streetNum }}</p>
-          <p>{{ biz.location.formattedAddress.cityStateZip }}</p>
-          <p>{{ biz.location.country }}</p>
-          <p>{{ biz.contact.formattedPhone }}</p>
-          <p>#{{ biz.contact.twitter }}</p>
-        </div>
+      <div class="map-footer" *ngFor="let baz of featuredBusiness">
+        <h1>{{ baz.name }}</h1>
+        <p >{{ baz.category }}</p>
       </div>
-    </div><!-- row -->
-  </div><!-- row -->
+        <div class="address-block">
+          <div *ngFor="let boz of featuredBusiness">
+            <ul>
+              <li>{{ boz.location.address }}</li>
+              <li>{{ boz.location.city }}, {{ boz.location.state }} {{ boz.location.postalCode }}</li>
+              <li>{{ boz.location.country }}</li>
+              <br />
+              <li><a href=tel:>{{((boz.contact?.formattedPhone) ? boz.contact.formattedPhone:'')}}</a></li>
+              <br />
+              <li>{{((boz.contact?.twitter) ? "Twitter: @"+boz.contact.twitter:'')}}</li>
+              <li>{{((boz.contact?.facebookName) ? "Facebook: "+boz.contact.facebookName:'')}}</li>
+              <li>{{((boz.location?.crossStreet) ? "Cross Street: " + boz.location.crossStreet:'')}}</li>
+            </ul>  
+          </div><!-- featuredBusiness -->
+        </div><!-- address-block -->
+      </div><!-- row -->
+    </div><!-- col-sm-7 -->
+  </div><!-- nested row -->
 </div><!-- row -->

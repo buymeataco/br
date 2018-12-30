@@ -1,5 +1,6 @@
 export interface FetchedBusinesses {
   restaurants : [{
+    id: number,
     name: string,
     backgroundImageURL: any,
     preppedImageURL: any,
