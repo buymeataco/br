@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
 import { DataService } from '../../services/data.service';
 import { FetchedBusinesses } from '../../models/FetchedBusinesses';
@@ -10,6 +11,7 @@ import { AgmCoreModule } from '@agm/core';
   templateUrl: './list.component.html'
 })
 export class ListComponent implements OnInit {
+
   fetchedBusinesses: FetchedBusinesses[];
   convertedFetched: any;
   sanitizedURLarray: SanitizedURLarray[];
@@ -18,10 +20,17 @@ export class ListComponent implements OnInit {
   userClickedBiz: string;
   userRequestedInfo: any;
   zoom: number = 14;
-  lng: any;
-  lat: any;
+  lng: number;
+  lat: number;
+  lbl: string;
+  //infoWindow: string = "Testing";
 
-  constructor(private _dataService: DataService, private _sanitizer: DomSanitizer) {}
+  constructor (
+    private _dataService: DataService,
+    private _sanitizer: DomSanitizer,
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router
+  ){}
 
   ngOnInit() {
     this._dataService.getDataStream().subscribe(fetchedBusinesses => {
@@ -31,14 +40,19 @@ export class ListComponent implements OnInit {
       this.sanitizedURLarray = this.getImageURLs(this.convertedFetched);
       this.reinsertSanitizedURLs(this.sanitizedURLarray);
       this.featuredBusiness = this.featuredBiz();
-      //this.loadDefaultMap();
       this.loadMap();
     });
   }//ngOnInit
 
+  // var marker = new google.maps.Marker {
+
+  // }
+
   loadMap() {
     this.lng = this.featuredBusiness[0].location.lng;
     this.lat = this.featuredBusiness[0].location.lat;
+    this.lbl = this.featuredBusiness[0].name;
+    //this.markerInfo = "test";
   }
 
   jsonFeedToArray(fetched) {
@@ -91,7 +105,11 @@ export class ListComponent implements OnInit {
 
   clickedBiz(e) {
     this.userClickedBiz = e.explicitOriginalTarget.firstChild.firstChild.innerText;
-    this.featuredBiz();
-    this.loadMap();
+    if (window.innerWidth <= 768) {
+        this._router.navigate(['/detail']);
+    } else {
+      this.featuredBiz();
+      this.loadMap();
+    }
   }
 }//ListComponent

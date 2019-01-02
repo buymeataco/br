@@ -1,9 +1,11 @@
-<div class="row" *ngFor="let biz of convertedFetched">
-  <div class="col-xs-12 visible-xs">
+ <div class="mobile-parent visible-xs">
+  <div class="row visible-xs" *ngFor="let biz of convertedFetched">
+    <div class="col-xs-12">
       <div class="food-hero" (click)="clickedBiz($event)" [style.background-image]="biz.preppedImageURL">
       <div class="food-hero__content">
         <h1>{{ biz.name }}</h1>
         <p>{{ biz.category }}</p>
+      </div>
       </div>
     </div>
   </div>
@@ -22,7 +24,11 @@
     <div class="row">
       <div class="col-xs-12">
         <agm-map [zoom]=zoom [latitude]="lat" [longitude]="lng">
-          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          <agm-marker
+            [title]="lbl"
+            [latitude]="lat"
+            [longitude]="lng">
+          </agm-marker>
         </agm-map>
     <div class="row">
      <div class="col-xs-12">
@@ -35,14 +41,11 @@
             <ul>
               <li>{{ boz.location.address }}</li>
               <li>{{ boz.location.city }}, {{ boz.location.state }} {{ boz.location.postalCode }}</li>
-              <li>{{ boz.location.country }}</li>
-              <br />
               <li><a href=tel:>{{((boz.contact?.formattedPhone) ? boz.contact.formattedPhone:'')}}</a></li>
-              <br />
-              <li>{{((boz.contact?.twitter) ? "Twitter: @"+boz.contact.twitter:'')}}</li>
+              <li>{{((boz.contact?.twitter) ? "@"+boz.contact.twitter:'')}}</li>
               <li>{{((boz.contact?.facebookName) ? "Facebook: "+boz.contact.facebookName:'')}}</li>
               <li>{{((boz.location?.crossStreet) ? "Cross Street: " + boz.location.crossStreet:'')}}</li>
-            </ul>  
+            </ul>
           </div><!-- featuredBusiness -->
         </div><!-- address-block -->
       </div><!-- row -->

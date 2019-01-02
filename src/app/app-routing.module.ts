@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router'
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './components/list/list.component';
-import { DetailComponent } from './components/detail/detail.component';
+import { DetailsComponent } from './components/details/details.component';
 
 const routes: Routes = [
-	{path: 'list', component: ListComponent},
-	{path: 'detail', component: DetailComponent}
+  {path: 'list', component: ListComponent},
+  {path: 'details', component: DetailsComponent},
+  {path: '', component: ListComponent}
 ];
 
 @NgModule({
-	exports: [RouterModule],
+  exports: [RouterModule],
   imports: [
-    CommonModule,
-		RouterModule.forRoot(routes)
-  ],
-  declarations: []
+    RouterModule.forRoot(
+      routes
+      //{ enableTracing: true }
+    )
+  ]
 })
 export class AppRoutingModule { }

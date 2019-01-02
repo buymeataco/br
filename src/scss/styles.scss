@@ -1,9 +1,7 @@
 body {
-  overflow-y: hidden;
   overflow-x: hidden;
 }
 
-.container,
 .row,
 .col-xs-2,
 .col-xs-3,
@@ -18,10 +16,6 @@ body {
   padding: 0;
 }
 
-.container {
-  margin: 0 auto;
-}
-
 agm-map {
   height: 360px;
   width: 100%;
@@ -29,25 +23,26 @@ agm-map {
 
 .nav-bar {
   background-color: #43E895;
-  height: 60px;
+  min-height: 60px;
   border-bottom: 1px solid rgb(167,167,170);
-    p {
-      font-family: $bodyCopyFont;
+    h1 {
+      font-family: $headerFont;
       text-align: center;
       color: #ffffff;
+      margin: 25px 0 0 0;
       font-size: 17px;
-      margin-top: 25px;
     }
-    img {
+    img.icon-map {
       float: right;
       margin: 10px 10px 0 0;
     }
-    img.arrow {
+    img.left-arrow {
+      display: block;
       float: left;
-      max-width: 20px;
-      padding: 20px 0 0 12px;
+      max-height: 20px;
+      margin: 23px 0 0 15px;
     }
-}//nav-bar
+}
 
 .food-hero {
   position: relative;
@@ -65,17 +60,18 @@ agm-map {
   }
 }
 
-.hideXscroll {
+.mobile-parent {
   overflow-x: hidden;
-  overflow-y: auto;
-  max-height: 1000px;
+  overflow-y: visible;
+  max-height: 793px;
+  margin-bottom: 50px;
 }
 
-// .allowScroll {
-//   overflow-x: hidden;  
-//   overflow-y: scroll;
-//   max-height: 1000px;  
-// }
+.hideXscroll {
+  overflow-x: hidden;
+  overflow-y: visible;
+  max-height: 793px;
+}
 
 .food-hero:after {
   content: '';
@@ -93,10 +89,10 @@ agm-map {
 .food-hero__content {
   position: relative;
   z-index: 10;
-  top: 135px;
-  left: 16px;
+  top: 144px;
+  left: 12px;
   h1 {
-    font-family: $bodyCopyFont;
+    font-family: $headerFont;
     color: #ffffff;
     margin: 0;
     font-size: 16px;  
@@ -105,43 +101,6 @@ agm-map {
     font-family: $bodyCopyFont;
     color: #ffffff;
     font-size: 12px;
-  }
-}//food-hero__content
-
-.map-footer  {
-  background-color: #34B379;
-  height: 60px;
-  padding-top: 12px;
-  padding-left: 10px;
-  h1 {
-    font-family: $bodyCopyFont;
-    color: #ffffff;
-    margin: 0;
-    font-size: 16px;  
-  }
-  p {
-    font-family: $bodyCopyFont;
-    color: #ffffff;
-    font-size: 12px;
-  }
-}//map-footer
-
-.address-block {
-    p {
-    margin-top: 15px;
-    font-family: $bodyCopyFont;
-    color: #000000;
-    font-size: 12px;
-  }
-}
-
-.sticky-footer {
-  @include clearfix;
-  background-color: #2A2A2A;
-  //height: 50px;
-  img {
-    max-width: 20px;
-    padding-top: 10px;
   }
 }
 
@@ -150,5 +109,58 @@ agm-map {
   overflow: hidden;
   img {
     max-width: initial;
+  }
+}
+
+.map-footer  {
+  background-color: #34B379;
+  height: 60px;
+  padding: 12px 0 0 12px;
+  h1 {
+    font-family: $headerFont;
+    color: #ffffff;
+    margin: 0;
+    font-size: 16px;  
+  }
+  p {
+    font-family: $bodyCopyFont;
+    color: #ffffff;
+    font-size: 12px;
+  }
+}
+
+.address-block {
+  ul {
+    margin: 12px 0 0 12px;
+    li {
+      font-family: $bodyCopyFont;
+      color: #000000;
+      font-size: 16px;
+    }
+    li:nth-child(3) {
+      margin: 26px 0 26px 0;
+    }
+  }
+}
+
+.sticky-footer {
+  background-color: #2A2A2A;
+  height: 50px;
+  img {
+    max-width: 20px;
+    padding-top: 8px;
+  }
+  p {
+    text-align: center;
+    font-size: 10px;
+    font-family: $bodyCopyFont; 
+  }
+  a {
+    text-decoration: none;
+    color: #ffffff;
+      &:hover {
+        color: #979797;
+        cursor: pointer;
+      }
   }
 }

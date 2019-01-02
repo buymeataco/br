@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-12">
+
+    <div class="map">
+      <img src="../../assets/img/map_placeholder.png" class="img-responsive" alt="map">
+    </div>
+      
+    <div class="map-footer">
+      <h1>Name</h1>
+      <p >Category</p>
+    </div>
+    <div class="address-block">
+    <div>
+      <ul *ngFor="let boz of featuredBusiness">
+        <li>{{ boz.location.address }}</li>
+       <!-- <li>{{ boz.location.city }}, {{ boz.location.state }} {{ boz.location.postalCode }}</li>
+        <li><a href=tel:>{{((boz.contact?.formattedPhone) ? boz.contact.formattedPhone:'')}}</a></li>
+        <li>{{((boz.contact?.twitter) ? "@"+boz.contact.twitter:'')}}</li>
+        <li>{{((boz.contact?.facebookName) ? "Facebook: "+boz.contact.facebookName:'')}}</li>
+        <li>{{((boz.location?.crossStreet) ? "Cross Street: " + boz.location.crossStreet:'')}}</li> -->
+      </ul>
+    </div>
+  </div>
+  </div>
+</div>
