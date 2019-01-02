@@ -23,7 +23,6 @@ export class ListComponent implements OnInit {
   lng: number;
   lat: number;
   lbl: string;
-  //infoWindow: string = "Testing";
 
   constructor (
     private _dataService: DataService,
@@ -44,15 +43,10 @@ export class ListComponent implements OnInit {
     });
   }//ngOnInit
 
-  // var marker = new google.maps.Marker {
-
-  // }
-
   loadMap() {
     this.lng = this.featuredBusiness[0].location.lng;
     this.lat = this.featuredBusiness[0].location.lat;
     this.lbl = this.featuredBusiness[0].name;
-    //this.markerInfo = "test";
   }
 
   jsonFeedToArray(fetched) {
@@ -106,7 +100,7 @@ export class ListComponent implements OnInit {
   clickedBiz(e) {
     this.userClickedBiz = e.explicitOriginalTarget.firstChild.firstChild.innerText;
     if (window.innerWidth <= 768) {
-        this._router.navigate(['/detail']);
+        this._router.navigate(['/details']);
     } else {
       this.featuredBiz();
       this.loadMap();
