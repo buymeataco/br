@@ -98,7 +98,7 @@ export class ListComponent implements OnInit {
   }//reinsertSanitizedURLs
 
   clickedBiz(e) {
-    this.userClickedBiz = e.explicitOriginalTarget.firstChild.firstChild.innerText;
+    this.userClickedBiz = e.target.firstChild.firstChild.innerText;
     if (window.innerWidth <= 768) {
       this.featuredBiz();
       localStorage.setItem('featuredBusiness', JSON.stringify(this.featuredBusiness));
