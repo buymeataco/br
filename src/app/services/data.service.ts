@@ -12,8 +12,7 @@ const httpOptions = {
 })
 
 export class DataService {
-  //jsonUrl: string = 'https://s3.amazonaws.com/br-codingexams/restaurants.json';
-  jsonUrl: string = 'http://portfolio.buymeataco.com/restaurants.json';
+  jsonUrl: string = 'https://s3.amazonaws.com/br-codingexams/restaurants.json';
 
   constructor(private _http: HttpClient) { }
 

@@ -100,7 +100,9 @@ export class ListComponent implements OnInit {
   clickedBiz(e) {
     this.userClickedBiz = e.explicitOriginalTarget.firstChild.firstChild.innerText;
     if (window.innerWidth <= 768) {
-        this._router.navigate(['/details']);
+      this.featuredBiz();
+      localStorage.setItem('featuredBusiness', JSON.stringify(this.featuredBusiness));
+      this._router.navigate(['/details']);
     } else {
       this.featuredBiz();
       this.loadMap();

@@ -7,7 +7,6 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 
 export class NavbarComponent implements OnInit {
-  //won't work!!!
   //buttonShow = this._router.url === '/details' ? true : false;
   
   buttonShow: any;

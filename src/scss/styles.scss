@@ -21,6 +21,10 @@ agm-map {
   width: 100%;
 }
 
+.map > agm-map {
+  height: 180px;
+}
+
 .push {
   height: 50px;
 }
@@ -67,14 +71,14 @@ agm-map {
 .mobile-parent {
   overflow-x: hidden;
   overflow-y: visible;
-  max-height: 793px;
+  max-height: 810px;
   margin-bottom: 50px;
 }
 
 .hideXscroll {
   overflow-x: hidden;
   overflow-y: visible;
-  max-height: 793px;
+  max-height: 810px;
 }
 
 .food-hero:after {
@@ -105,14 +109,6 @@ agm-map {
     font-family: $bodyCopyFont;
     color: #ffffff;
     font-size: 12px;
-  }
-}
-
-.map {
-  max-height: 180px;
-  overflow: hidden;
-  img {
-    max-width: initial;
   }
 }
 

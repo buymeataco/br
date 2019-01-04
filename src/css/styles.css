@@ -1,3 +1,15 @@
+@import url(//db.onlinewebfonts.com/c/14bcfcf98e9d42ff3c30c88d332fd7d4?family=Avenir+Next+Demi+Bold);
+@import url(//db.onlinewebfonts.com/c/f3df85918e3f1ba8a7b13be9b47882ce?family=Avenir+Next);
+@font-face {
+  font-family: "Avenir Next Demi Bold";
+  src: url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.eot");
+  src: url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.woff") format("woff"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/14bcfcf98e9d42ff3c30c88d332fd7d4.svg#Avenir Next Demi Bold") format("svg");
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("//db.onlinewebfonts.com/t/f3df85918e3f1ba8a7b13be9b47882ce.eot");
+  src: url("//db.onlinewebfonts.com/t/f3df85918e3f1ba8a7b13be9b47882ce.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f3df85918e3f1ba8a7b13be9b47882ce.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f3df85918e3f1ba8a7b13be9b47882ce.woff") format("woff"), url("//db.onlinewebfonts.com/t/f3df85918e3f1ba8a7b13be9b47882ce.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f3df85918e3f1ba8a7b13be9b47882ce.svg#Avenir Next") format("svg");
+}
 body {
   overflow-x: hidden;
 }
@@ -21,6 +33,10 @@ agm-map {
   width: 100%;
 }
 
+.map > agm-map {
+  height: 180px;
+}
+
 .push {
   height: 50px;
 }
@@ -31,7 +47,7 @@ agm-map {
   border-bottom: 1px solid #a7a7aa;
 }
 .nav-bar h1 {
-  font-family: Verdana, sans-serif;
+  font-family: "Avenir Next Demi Bold";
   text-align: center;
   color: #ffffff;
   margin: 25px 0 0 0;
@@ -67,14 +83,14 @@ agm-map {
 .mobile-parent {
   overflow-x: hidden;
   overflow-y: visible;
-  max-height: 793px;
+  max-height: 810px;
   margin-bottom: 50px;
 }
 
 .hideXscroll {
   overflow-x: hidden;
   overflow-y: visible;
-  max-height: 793px;
+  max-height: 810px;
 }
 
 .food-hero:after {
@@ -101,23 +117,15 @@ agm-map {
   left: 12px;
 }
 .food-hero__content h1 {
-  font-family: Verdana, sans-serif;
+  font-family: "Avenir Next Demi Bold";
   color: #ffffff;
   margin: 0;
   font-size: 16px;
 }
 .food-hero__content p {
-  font-family: Verdana, sans-serif;
+  font-family: "Avenir Next";
   color: #ffffff;
   font-size: 12px;
-}
-
-.map {
-  max-height: 180px;
-  overflow: hidden;
-}
-.map img {
-  max-width: initial;
 }
 
 .map-footer {
@@ -126,13 +134,13 @@ agm-map {
   padding: 12px 0 0 12px;
 }
 .map-footer h1 {
-  font-family: Verdana, sans-serif;
+  font-family: "Avenir Next Demi Bold";
   color: #ffffff;
   margin: 0;
   font-size: 16px;
 }
 .map-footer p {
-  font-family: Verdana, sans-serif;
+  font-family: "Avenir Next";
   color: #ffffff;
   font-size: 12px;
 }
@@ -141,7 +149,7 @@ agm-map {
   margin: 12px 0 0 12px;
 }
 .address-block ul li {
-  font-family: Verdana, sans-serif;
+  font-family: "Avenir Next";
   color: #000000;
   font-size: 16px;
 }
@@ -160,7 +168,7 @@ agm-map {
 .sticky-footer p {
   text-align: center;
   font-size: 10px;
-  font-family: Verdana, sans-serif;
+  font-family: "Avenir Next";
 }
 .sticky-footer a {
   text-decoration: none;
