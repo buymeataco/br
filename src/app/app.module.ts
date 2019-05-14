@@ -27,7 +27,7 @@ import { DataService } from './services/data.service';
     RouterModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'REMOVED'
+      apiKey: 'AIzaSyBRs2J2kqhFyLR1mWMcbh_KjeVvM2KmqMM'
     })
   ],
   providers: [DataService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
